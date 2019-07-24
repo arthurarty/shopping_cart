@@ -8,8 +8,7 @@ class Insert(Operation):
     name = 'Insert'
 
     def __init__(self, db_conn, table_name, cols_values):
-        self.cols_values = cols_values
-        super().__init__(db_conn, table_name)
+        super().__init__(db_conn, table_name, cols_values)
 
     def execute(self):
         """Insert new record into database"""

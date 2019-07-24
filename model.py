@@ -1,5 +1,4 @@
-from db.select import Select
-from db.insert import Insert
+from db.driver import handle_operation
 
 
 class Model():
@@ -9,8 +8,9 @@ class Model():
         self.table_name = table_name
 
     def create(self, col_values):
-        record = Insert(self.db_conn, self.table_name, col_values)
-        return record.execute()
+        return handle_operation(
+            'Insert', self.db_conn, self.table_name, col_values
+            )
 
     def update(self, col_values):
         # update value in db
@@ -21,5 +21,6 @@ class Model():
         pass
 
     def find_all(self, col_values):
-        records = Select(self.db_conn, self.table_name)
-        return records.execute()
+        return handle_operation(
+            'Select', self.db_conn, self.table_name, col_values
+            )

@@ -3,12 +3,8 @@ from model import Model
 from collections import namedtuple
 
 db = Connection.instance()
-# table_select = Select('company', db)
-# print(table_select.execute())
-Table = namedtuple('Table', 'id name age')
+Columns = namedtuple('Columns', 'id name age')
+person = Columns(id=5, name='Prossy', age=25)
 company = Model(db, 'company')
-print(company.find_all())
-
-
-person = Table(id=4, name='Gab', age=34)
 company.create(person)
+print(company.find_all(Columns))
