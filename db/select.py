@@ -3,7 +3,7 @@ from db.utils import convertTuple
 
 
 class Select(Operation):
-    """Handles selecting item from a table"""
+    """Handles selecting all items from a table"""
 
     name = 'Select'
 

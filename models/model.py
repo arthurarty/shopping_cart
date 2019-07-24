@@ -30,3 +30,9 @@ class Model():
         return handle_operation(
             'Select', self.db_conn, self.table_name, col_values
             )
+
+    def find(self, col_values):
+        """return a single record from the database"""
+        return handle_operation(
+            'SelectOne', self.db_conn, self.table_name, col_values
+            )
