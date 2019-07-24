@@ -13,8 +13,9 @@ class Model():
             )
 
     def update(self, col_values):
-        # update value in db
-        pass
+        return handle_operation(
+            'Update', self.db_conn, self.table_name, col_values
+            )
 
     def delete(self, col_values):
         # delete value from db
