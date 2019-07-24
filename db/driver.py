@@ -1,14 +1,16 @@
+from collections import namedtuple
+
+from db.connection import Connection
+from db.delete import Delete
 from db.insert import Insert
 from db.select import Select
 from db.update import Update
-from db.delete import Delete
-from db.connection import Connection
-from collections import namedtuple
+from db.select_one import SelectOne
 
 
 def get_db_operations():
     """create a dict containing the operations and their classess"""
-    operations = (Insert, Select, Update, Delete)
+    operations = (Insert, Select, Update, Delete, SelectOne)
     return dict([cls.name, cls] for cls in operations)
 
 

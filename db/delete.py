@@ -11,9 +11,9 @@ class Delete(Operation):
 
     def execute(self):
         """Delete a record by its id"""
-        table_id = self.cols_values.id
+        record_id = self.cols_values.id
         self.db_conn.cur.execute(f"""
         DELETE FROM {self.table_name}
-        WHERE id = {table_id}
+        WHERE id = {record_id}
         """)
         self.db_conn.commit_session()
