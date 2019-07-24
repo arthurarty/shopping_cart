@@ -5,6 +5,8 @@ from db.utils import convertTuple, return_values
 class Insert(Operation):
     """Handles creating a new record in the db"""
 
+    name = 'Insert'
+
     def __init__(self, db_conn, table_name, cols_values):
         self.cols_values = cols_values
         super().__init__(db_conn, table_name)

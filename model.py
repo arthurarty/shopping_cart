@@ -12,14 +12,14 @@ class Model():
         record = Insert(self.db_conn, self.table_name, col_values)
         return record.execute()
 
-    def update(self):
+    def update(self, col_values):
         # update value in db
         pass
 
-    def delete(self):
+    def delete(self, col_values):
         # delete value from db
         pass
 
-    def find_all(self):
+    def find_all(self, col_values):
         records = Select(self.db_conn, self.table_name)
         return records.execute()
