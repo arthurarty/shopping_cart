@@ -1,4 +1,6 @@
-from connection import Connection, Table
+from connection import Connection
+from connection.table import Table
+
 
 # create db connection
 db = Connection()
